@@ -1,14 +1,18 @@
 package ru.academits.voropaeva.json;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 import java.util.List;
 
 public class Country {
+    @JsonProperty("name")
     private String name;
-    private int population;
-    private List<Currencies> currencies;
 
-    public Country() {
-    }
+    @JsonProperty("population")
+    private int population;
+
+    @JsonProperty("currencies")
+    private List<Currency> currencies;
 
     public String getName() {
         return name;
@@ -26,11 +30,11 @@ public class Country {
         this.population = population;
     }
 
-    public List<Currencies> getCurrencies() {
+    public List<Currency> getCurrencies() {
         return currencies;
     }
 
-    public void setCurrencies(List<Currencies> currencies) {
+    public void setCurrencies(List<Currency> currencies) {
         this.currencies = currencies;
     }
 
